@@ -1,0 +1,103 @@
+# Mensagens de sessão do Antigravity
+
+> Estas mensagens são modelos de trabalho, não autorizam por si só uma fase nem substituem `AGENTS.md`/skills. Os nomes dos menus e recursos de permissões variam conforme versão, sistema operacional e superfície. Confirme as opções na documentação/interface oficial; nunca presuma que Markdown é uma barreira técnica.
+
+
+## Regra comum de registro de alterações
+
+Em qualquer fase autorizada que altere arquivos, registre mudanças relevantes no único arquivo cumulativo `docs/REGISTRO-ALTERACOES.md`, acrescentando a nova entrada ao final e preservando todo o histórico anterior. Não crie arquivos Markdown separados para cada alteração. Registre objetivo, arquivos afetados, verificações realmente executadas, resultados e pendências, sem segredos, logs extensos, diffs completos ou snapshots do Git. A Fase 0 permanece somente leitura e não pode criar ou editar esse arquivo. Consulte a skill `documentacao-agents-md` para o formato completo. O resumo de continuidade continua sendo externo e separado.
+
+Use este arquivo junto do `AGENTS.md` e das skills em `.agents/skills/`. O índice normativo é `docs/INDICE-DO-PACOTE.md`. Antes de uma sessão que precise persistir resumos, forneça um caminho absoluto para a pasta externa de continuidade na própria mensagem de preparação. Não grave um caminho pessoal nos arquivos versionados; confirme que a pasta está fora do repositório. Na fundação genérica, não use materiais de clientes. Quando uma tarefa de cliente depender de referências visuais ou documentais, informe o caminho na instrução específica dessa tarefa, sem gravá-lo nos arquivos versionados. A ausência de referências não bloqueia tarefas que não dependam delas.
+
+A autorização textual para salvar resumos não substitui as permissões reais do Antigravity nem concede acesso fora do workspace automaticamente. Antes de usar um caminho externo, confirme com o usuário e na documentação/interface oficial da versão instalada se esse caminho está acessível e quais permissões o abrangem. Não use flags, chaves de configuração ou diretórios adicionais copiados de outra ferramenta. A precedência e a sintaxe de regras podem variar conforme versão e superfície; confira [Permissões](https://antigravity.google/docs/permissions), [Configurações do agente](https://antigravity.google/docs/agent-settings) e [Sandbox do terminal](https://antigravity.google/docs/sandbox-mode). Não use bypass e não modifique configurações de usuário automaticamente. Se surgir um pedido de aprovação para gravar, aguarde a decisão do usuário. Se aprovado, grave e verifique; se negado, bloqueado sem opção de aprovação ou sem resposta até o encerramento/interrupção da sessão, não contorne: mostre o resumo completo na conversa e marque `PENDING MANUAL`. A mensagem curta não substitui o `AGENTS.md` nem as skills normativas listadas no índice.
+
+## Preparação da sessão
+
+Mantenha `AGENTS.md` e `.agents/skills/` versionados no projeto-base e use o índice para localizar as regras de cada fase. Quando precisar persistir resumos, forneça o caminho absoluto da pasta externa de continuidade na própria mensagem de preparação ou use uma configuração local não versionada que esteja acessível ao Antigravity. Não grave esse caminho pessoal nos arquivos compartilhados. Antes da primeira gravação, habilite o acesso pelos meios documentados para a versão instalada e confirme as permissões efetivas, sem usar bypass. **Antes de iniciar a Fase 0, lembre-se: se aparecer um pedido de aprovação para um comando de inspeção, escolha apenas uma aprovação pontual, se ela estiver disponível; evite opções equivalentes a “sempre permitir” ou qualquer autorização persistente. O Antigravity deve aguardar sua decisão e não pode escolher por você.** Ao fim de cada fase, o agente deve tentar criar o resumo nessa pasta somente se o acesso estiver autorizado e disponível, gerar um nome que não sobrescreva versões anteriores e ler o arquivo de volta para verificar a gravação. Você só precisará fornecer o caminho do resumo mais recente na sessão seguinte. Se a permissão de gravação continuar bloqueada, use o fallback previsto nas skills. Um pedido de aprovação pendente não é, por si só, falha: aguarde a decisão do usuário. Não configure referências de clientes na fundação genérica; informe o caminho diretamente na instrução específica do cliente quando necessário.
+
+## Sessão inicial — Fase 0
+
+```text
+
+Caminho absoluto da pasta externa de continuidade, fora do repositório: [PREENCHER NESTA MENSAGEM OU INFORMAR QUE A PERSISTÊNCIA FICARÁ PENDING MANUAL].
+
+Leia `AGENTS.md` e `docs/INDICE-DO-PACOTE.md`; carregue e leia integralmente as skills obrigatórias da fase autorizada. Trate o conjunto modular como fonte normativa e execute exclusivamente a Fase 0.
+
+Antes de começar, confirme com o usuário se a pasta externa de continuidade foi autorizada/acessada pelos mecanismos oficialmente suportados; não presuma que o workspace inclui caminhos externos. Não use bypass nem suponha que essa autorização supera regras restritivas ou os limites do sandbox. Se não houver acesso efetivo, siga o fallback previsto nas skills.
+
+Não crie nem altere arquivos do projeto, não instale dependências, não inicialize Git, não altere configurações/permissões do projeto e não avance para outra fase. Não faça nenhuma gravação no projeto. Se um comando de inspeção gerar um diálogo de aprovação, pare e aguarde minha escolha: eu selecionarei somente a autorização pontual disponível, se houver. Você não pode clicar, responder por mim nem presumir minha escolha. Nunca selecione nem me oriente a selecionar uma opção equivalente a “sempre permitir” ou outra opção que grave regra persistente. Antes de iniciar a sessão, devo estar preparado para escolher apenas a aprovação pontual sempre que ela estiver disponível. Se for observada mudança inesperada em permissões ou no estado do workspace durante a fase, registre o que foi observado sem expor conteúdo sensível. Não presuma um arquivo interno de configuração nem tente ler configurações privadas fora do escopo. Se a comparação comprovar uma gravação não autorizada durante a Fase 0, o portão de somente leitura falhou. Se o arquivo já existia no retrato inicial e não mudou, preserve-o. A única gravação externa autorizada é o resumo da Fase 0 no diretório fornecido pelo usuário, seguindo as regras de versionamento e verificação. Se surgir um pedido de aprovação para criar a pasta ou gravar o resumo, aguarde a decisão do usuário. Se aprovado, prossiga somente com essa operação; se negado ou bloqueado sem opção de aprovação, use o fallback previsto nas skills. Não contorne a restrição.
+
+Entregue o relatório conciso em tabelas curtas com os 18 itens obrigatórios. Se a persistência externa falhar, apresente o resumo completo na conversa e use `PENDING MANUAL`; informe o caminho exato somente após verificar a gravação. Aguarde minha aprovação explícita.
+
+```
+
+## Nova sessão — Fase 1A
+
+Use somente depois de revisar o relatório da Fase 0 e decidir explicitamente autorizar a Fase 1A.
+
+```text
+
+Caminho absoluto da pasta externa de continuidade, fora do repositório: [PREENCHER NESTA MENSAGEM OU INFORMAR QUE A PERSISTÊNCIA FICARÁ PENDING MANUAL].
+
+Leia `AGENTS.md` e `docs/INDICE-DO-PACOTE.md`; carregue e leia integralmente as skills obrigatórias da fase autorizada. Leia também o resumo de continuidade da Fase 0: [CAMINHO_ABSOLUTO_DO_RESUMO_FASE_0]. Confirme o estado real do ambiente e do repositório antes de agir. Eu autorizo explicitamente a execução exclusiva da Fase 1A. Não execute o canário nesta fase, não faça commit e não avance para a Fase 1B.
+
+Antes de definir o timeout interno e executar a auditoria principal, registre `npm --version` e os valores efetivos obtidos com `npm config get fetch-retries fetch-retry-mintimeout fetch-retry-maxtimeout fetch-timeout` (consulte as chaves separadamente se necessário). Baseie o orçamento de `scripts/audit.mjs` nos endpoints sequenciais reais da versão instalada: não multiplique cegamente `fetch-retries` pelos endpoints `POST`; a página geral de `npm audit` e o changelog oficial divergem sobre a existência do fallback Quick Audit, então confirme o código/documentação da versão instalada antes de contar endpoints e aplique retentativas somente aos pedidos para os quais elas realmente se aplicam. O timeout deve ser finito, interno ao módulo e testado. Se o orçamento passar de 10 minutos ou for desproporcional, apresente o cálculo, as premissas e as alternativas ao usuário e aguarde sua decisão explícita antes de fixar a constante; um limite menor não autoriza classificar timeout como `network`. Antes da execução principal de `npm run audit`, capture o fixture real normal `npm audit --json` e siga o procedimento de fixture e captura controlada da skill `auditoria-dependencias`. Depois, faça capturas controladas de falha com variáveis restritas ao processo filho para ambos os modos: `npm audit --json` e `npm audit --omit=dev --audit-level=high --json` (mais a invocação exata de `prod` se for diferente), usando `npm_config_fetch_retries=0`, `npm_config_fetch_timeout` curto e um registry de loopback confirmado indisponível. Confirme que o shell real foi identificado se a execução depender de sintaxe de shell, não altere configurações persistentes e registre os valores/diagnósticos observados. Distinga erros realmente observados dos fixtures sintéticos. Se alguma captura controlada for impossível ou inconclusiva, mantenha `PENDING MANUAL` e não trate o portão como aprovado sem exceção formal prevista nas instruções da tarefa. Depois execute `npm run audit` e registre estados, campos `cause` e evidências reais de produção, árvore completa e agregado. Produção `REJECTED` sempre bloqueia. `INCOMPLETE` ou `NOT RUN` para produção só podem ser pendência externa não bloqueante nos limites estritos dos critérios de saída da skill `fases-e-autorizacoes`, com causa de rede comprovada; qualquer outra causa bloqueia. O agregado `INCOMPLETE` só recebe tratamento equivalente quando a causa comprovada for exclusivamente a mesma indisponibilidade externa da produção, sem causa técnica independente. Preserve os estados e códigos de saída.
+
+Ao terminar, apresente o relatório e a tabela de continuidade completa na conversa. Tente salvar o resumo na pasta externa fornecida pelo usuário, sem sobrescrever versões anteriores, e confira o arquivo após gravar. Se surgir um pedido de aprovação, aguarde a decisão do usuário. Se aprovado, grave e verifique; se negado, bloqueado sem opção de aprovação ou sem resposta até o encerramento/interrupção da sessão, não contorne: mostre o resumo completo na conversa e declare `PENDING MANUAL`. Informe o caminho exato somente após verificar a gravação. Pare e aguarde minha decisão.
+
+```
+
+## Nova sessão — Fase 1B
+
+**Importante:** forneça nesta sessão o texto completo do procedimento “Canário de permissões” da skill `seguranca-permissoes`, junto com o resumo de continuidade. Leia também `AGENTS.md`, o índice e as skills obrigatórias da Fase 1B. Depois envie a mensagem abaixo. Não dependa apenas de `AGENTS.md`, `docs/SECURITY.md` ou de um resumo antigo para autorizar o canário.
+
+```text
+
+Caminho absoluto da pasta externa de continuidade, fora do repositório: [PREENCHER NESTA MENSAGEM OU INFORMAR QUE A PERSISTÊNCIA FICARÁ PENDING MANUAL].
+
+Use como fonte normativa o `AGENTS.md` e as skills indicadas no índice e leia o resumo de continuidade da Fase 1A: [CAMINHO_ABSOLUTO_DO_RESUMO_FASE_1A]. Confirme o estado real do projeto e a autorização explícita para a Fase 1B. Execute somente a Fase 1B.
+
+Esta fundação deve continuar genérica. Referências de clientes pertencem à instrução específica desse cliente; não personalize o núcleo com elas. Qualquer uso excepcional de referências de cliente nesta base exige minha autorização expressa, e toda personalização autorizada deve ficar em `src/client/`. Se a interface depender de referências específicas autorizadas, aplique o procedimento de análise de referências da skill `interface-cliente-referencias` para inventariar/analisar a pasta configurada sem modificar originais. Se for apenas a interface genérica da fundação, não bloqueie o trabalho pela ausência de referências.
+
+Antes do canário, confirme se uma reinicialização é necessária e faça-a somente pelo mecanismo autorizado. Peça ao usuário que abra a interface oficial de permissões/configurações do Antigravity, revise as regras relevantes e confirme explicitamente que foram carregadas e de qual configuração vêm. Registre essa confirmação como verificação manual; não afirme que você abriu o diálogo. Sem essa confirmação, mantenha o canário como `NOT RUN` e pare.
+
+Execute o canário exclusivamente conforme o procedimento “Canário de permissões” da skill `seguranca-permissoes`. Se a criação de `.env.fake-test` for bloqueada, não use outro caminho: peça ao usuário que crie o arquivo fictício e aguarde confirmação explícita. Se ele confirmar que o criou em resposta a esse pedido nesta sessão, execute as duas tentativas de leitura, sem registrar conteúdo; a remoção será responsabilidade do usuário. Se qualquer tentativa obrigatória não resultar em `BLOCKED`, registre o estado real e pare as operações dependentes; não contorne o bloqueio.
+
+Se qualquer um dos caminhos do canário não resultar em `BLOCKED`, interrompa as operações dependentes. Só continue tarefas de interface nesse cenário se eu autorizar expressamente, citando o resultado observado; a autorização deve dizer se inclui a instalação de React Router e Zod. Se ambos os caminhos resultarem em `BLOCKED`, siga as tarefas autorizadas da Fase 1B sem pedir essa autorização excepcional adicional. Limite a continuação às tarefas que não dependam do canário nem manipulem arquivos de ambiente. A autorização não cobre manuseio de outros arquivos de ambiente. Se o próprio Antigravity criou `.env.fake-test` nesta execução, ele pode removê-lo conforme o procedimento “Canário de permissões” da skill `seguranca-permissoes`; se você criou o arquivo após o pedido, a limpeza é sua responsabilidade. Não faça commit enquanto o arquivo permanecer no projeto. Não trate essa autorização como aprovação técnica, autorização de commit ou permissão para acessar arquivos de ambiente.
+
+Ao final, apresente o relatório e a tabela de continuidade na conversa. Tente salvar o resumo na pasta externa fornecida pelo usuário, sem sobrescrever versões anteriores, e confira o arquivo após a gravação. Se surgir um pedido de aprovação, aguarde a decisão do usuário. Se aprovado, grave e verifique; se negado, bloqueado sem opção de aprovação ou sem resposta até o encerramento/interrupção da sessão, não contorne: mostre o resumo completo na conversa e marque `PENDING MANUAL`. Informe o caminho exato somente se a gravação for verificada. Pare e aguarde minha decisão.
+
+```
+
+## Nova sessão — Fase 2
+
+Use somente depois de verificar o relatório da Fase 1B e decidir explicitamente autorizar a Fase 2. A autorização excepcional, se houver, precisa citar a fase de destino e as pendências aceitas, conforme o conjunto de skills. Campo de continuidade vazio ou ainda contendo marcador/placeholder não é válido. Antes da sessão, verifique o acesso real à pasta externa pelos mecanismos oficiais; não use bypass. A pasta de referências deve permanecer vazia na fundação genérica.
+
+```text
+
+Caminho absoluto da pasta externa de continuidade, fora do repositório: [PREENCHER NESTA MENSAGEM OU INFORMAR QUE A PERSISTÊNCIA FICARÁ PENDING MANUAL].
+
+Leia `AGENTS.md` e `docs/INDICE-DO-PACOTE.md`; carregue e leia integralmente as skills obrigatórias da fase autorizada. Leia o resumo de continuidade mais recente: [CAMINHO_ABSOLUTO_DO_RESUMO]. Confirme o estado real do projeto e as autorizações existentes. Eu autorizo explicitamente somente a Fase 2, nos seguintes limites: [DESCREVA A APROVAÇÃO OU AS PENDÊNCIAS QUE ESTOU AUTORIZANDO]. Não implemente módulos opcionais nem faça commit, push, publicação ou deploy sem autorização própria. Execute somente a Fase 2. Ao terminar, tente salvar e verificar o resumo no diretório externo fornecido pelo usuário. Se surgir um pedido de aprovação, aguarde a decisão do usuário; se aprovado, grave e releia o arquivo. Informe o caminho exato somente após a verificação, apresente o relatório e aguarde. Se negado, bloqueado sem opção de aprovação ou sem resposta até o encerramento/interrupção da sessão, apresente o resumo completo na conversa e marque `PENDING MANUAL`.
+
+```
+
+## Nova sessão para retomar uma fase interrompida
+
+```text
+
+Caminho absoluto da pasta externa de continuidade, fora do repositório: [PREENCHER NESTA MENSAGEM OU INFORMAR QUE A PERSISTÊNCIA FICARÁ PENDING MANUAL].
+
+Leia `AGENTS.md` e `docs/INDICE-DO-PACOTE.md`; carregue e leia integralmente as skills obrigatórias da fase autorizada. Leia o resumo de continuidade: [CAMINHO_ABSOLUTO_DO_RESUMO]. Não presuma que os registros ainda refletem o estado real. Inspecione o ambiente e o repositório, identifique o que foi concluído, o que pode ter sido afetado e quais operações são seguras de repetir. Não repita operações com efeitos colaterais antes de revalidar os resultados e as autorizações. Continue somente a fase já autorizada; não avance de fase nem interprete este pedido como aprovação de pendências não citadas. Apresente os bloqueios encontrados antes de prosseguir com uma operação dependente. Ao suspender ou interromper o trabalho, tente gerar e verificar um resumo de continuidade que registre o estado real, sem declarar a fase aprovada. Se surgir um pedido de aprovação, aguarde a decisão do usuário. Se aprovada, grave e verifique; se negada, bloqueada sem opção de aprovação ou sem resposta até o encerramento/interrupção da sessão, apresente a tabela completa na conversa e marque `PENDING MANUAL`.
+
+```
+
+## Tabela de autorizações humanas
+
+Não use uma autorização como substituta de outra:
+
+| Autorização | Significado | Não autoriza |
+| --- | --- | --- |
+| Aprovar relatório | Confirma aceitação do relatório como registro do trabalho. | Próxima fase, exceção de auditoria, commit ou ações remotas, salvo se autorizados explicitamente em separado. |
+| Avançar de fase | Autoriza a fase de destino indicada; se a fase anterior estiver incompleta, cita as pendências aceitas. | Não muda o estado técnico e não supera segredo exposto, falha crítica de integridade, operação destrutiva não autorizada ou dependência de segurança não satisfeita. |
+| Exceção de `audit:prod` | Substitui somente o portão de `audit:prod` da Fase 1B, com aceitação expressa. | Não muda o estado da auditoria nem cobre outro portão, commit ou operação remota. |
+| Commit inicial | Autoriza apenas o commit local conforme a regra de commit inicial da skill `git-integridade`. | Não avança fase, não muda estado técnico e não autoriza remoto, push, publicação ou deploy. |
